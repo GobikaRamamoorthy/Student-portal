@@ -1,0 +1,22 @@
+{
+  "name": "zen-stud-student-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-stack student portal with an Express REST API and a React (Vite) frontend.",
+  "scripts": {
+    "install:all": "npm install && npm --prefix backend install && npm --prefix frontend install",
+    "seed": "npm --prefix backend run seed",
+    "dev:backend": "npm --prefix backend run dev",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "concurrently -n API,WEB -c blue,magenta \"npm:dev:backend\" \"npm:dev:frontend\"",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend run start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
